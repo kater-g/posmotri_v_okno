@@ -54,8 +54,8 @@ ol {
   flex-direction: column;
   justify-content: flex-end;
   gap: 16px;
-  max-height: 534px;
 }
+
 .result__video-container {
   position: relative;
   display: flex;
@@ -77,12 +77,10 @@ ol {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  height: 54px;
 }
 
 .search-form__fieldset {
   width: fit-content;
-  height: 54px;
   border: none;
 }
 
@@ -107,7 +105,7 @@ ol {
   appearance: none;
 }
 
-input[type='text']::placeholder {
+.search-form__textfield::placeholder {
   text-align: left;
 }
 
@@ -191,7 +189,6 @@ input[type='text']::placeholder {
   gap: 26px;
   width: 100%;
   height: 100%;
-  max-height: 534px;
 }
 
 .title {
@@ -240,14 +237,22 @@ input[type='text']::placeholder {
 }
 
 .content__video-card-description-container {
+  max-width: 200px;
   text-align: justify;
 }
 
 .content__video-card-title {
+  overflow: hidden;
   font-family: 'Oswald', sans-serif;
   font-weight: 700;
   font-size: 30px;
   text-transform: uppercase;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.content__video-card-description {
+  white-space: normal;
 }
 
 .content__card-link {
@@ -276,6 +281,10 @@ input[type='text']::placeholder {
   background-color: #545050;
 }
 
+.content__card-link.content__card-link_current {
+  background-color: #545050;
+}
+
 .button {
   height: 34px;
   border: 1px solid #fff;
@@ -297,15 +306,15 @@ input[type='text']::placeholder {
   width: 100%;
 }
 
-button:focus {
+.button:focus {
   outline: none;
 }
 
-button:active {
+.button:active {
   background-color: #545050;
 }
 
-button:hover {
+.button:hover {
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-decoration-skip-ink: none;
@@ -313,7 +322,7 @@ button:hover {
   cursor: pointer;
 }
 
-button:focus-visible {
+.button:focus-visible {
   outline: 1px solid #fff;
   outline-offset: -3px;
 }
